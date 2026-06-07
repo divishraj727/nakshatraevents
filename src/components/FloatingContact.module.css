@@ -1,6 +1,6 @@
 .fab {
   position: fixed;
-  bottom: 2rem;
+  bottom: 5rem;
   right: 2rem;
   z-index: var(--z-toast);
   display: flex;
@@ -87,6 +87,6 @@
 }
 
 @media (max-width: 520px) {
-  .fab { bottom: 1.25rem; right: 1.25rem; }
-  .mainBtn { width: 3.2rem; height: 3.2rem; }
+  .fab { bottom: 4.5rem; right: 1.25rem; }
+  .mainBtn { width: 3.4rem; height: 3.4rem; }
 }

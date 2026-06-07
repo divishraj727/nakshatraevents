@@ -173,14 +173,16 @@
 @media (max-width: 768px) {
   .links { display: none; }
   .hamburger { display: flex; }
-  .nav { padding: 0.9rem 1.1rem; }
-  .logo { font-size: 0.88rem; letter-spacing: 0.1em; }
+  .nav { padding: 1rem 1.25rem; }
+  .logo { font-size: 1rem; letter-spacing: 0.1em; }
+  .hamburger { padding: 8px; }
+  .bar { width: 26px; height: 2px; }
 }
 
 @media (max-width: 480px) {
-  .nav { padding: 0.8rem 1rem; }
-  .logo { font-size: 0.85rem; }
-  .mobileLink { font-size: clamp(1.5rem, 8vw, 2rem); font-weight: 400; }
-  .mobileLinks { gap: 2rem; }
-  .mobileCta { padding: 0.85rem 2.2rem; font-size: 0.82rem; font-weight: 500; }
+  .nav { padding: 1rem 1rem; }
+  .logo { font-size: 1rem; font-weight: 600; letter-spacing: 0.1em; }
+  .mobileLink { font-size: clamp(1.6rem, 8vw, 2.2rem); font-weight: 500; }
+  .mobileLinks { gap: 2.25rem; }
+  .mobileCta { padding: 1rem 2.5rem; font-size: 0.88rem; font-weight: 600; }
 }
