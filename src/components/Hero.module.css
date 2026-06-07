@@ -216,19 +216,24 @@
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  .hero { padding: 5.5rem 1.25rem 3.5rem; }
   .subhead { font-size: 1rem; }
-  .eyebrow { font-size: 0.75rem; }
+  .eyebrow { font-size: 0.78rem; }
+  .content { gap: 1.4rem; }
 }
 
-@media (max-width: 520px) {
-  .hero { padding: 6rem 1.25rem 4rem; }
-  .heading { font-size: clamp(2.2rem, 9vw, 2.8rem); letter-spacing: 0.02em; }
-  .subhead { font-size: 0.97rem; max-width: 100%; }
-  .actions { flex-direction: column; width: 100%; gap: 0.75rem; }
-  .primaryBtn, .secondaryBtn { width: 100%; text-align: center; padding: 0.95rem 1.5rem; }
-  .trustBar { gap: 0.75rem; flex-wrap: wrap; justify-content: center; padding-top: 0.75rem; }
-  .trustItem { font-size: 0.82rem; }
-  .trustNum { font-size: 1rem; }
+@media (max-width: 480px) {
+  .hero { padding: 5rem 1rem 3rem; }
+  .heading { font-size: clamp(2rem, 9vw, 2.6rem); letter-spacing: 0.02em; }
+  .subhead { font-size: 1rem; max-width: 100%; font-weight: 400; line-height: 1.7; }
+  .eyebrow { font-size: 0.75rem; letter-spacing: 0.14em; }
+  .actions { flex-direction: column; width: 100%; gap: 0.75rem; margin-top: 0.25rem; }
+  .primaryBtn, .secondaryBtn { width: 100%; text-align: center; padding: 1rem 1.5rem; font-size: 0.85rem; font-weight: 600; }
+  .secondaryBtn { font-weight: 500; }
+  .trustBar { gap: 1rem; flex-wrap: wrap; justify-content: center; padding-top: 0.75rem; margin-top: 0.25rem; }
+  .trustItem { font-size: 0.88rem; font-weight: 400; }
+  .trustNum { font-size: 1.1rem; }
   .trustDot { display: none; }
-  .content { gap: 1.25rem; }
+  .content { gap: 1.1rem; }
+  .scrollCue { display: none; }
 }

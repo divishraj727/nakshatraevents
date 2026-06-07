@@ -86,9 +86,9 @@
 
 .name {
   font-family: var(--font-body);
-  font-size: 0.88rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   color: var(--ink);
 }
 
@@ -107,8 +107,8 @@
 }
 
 .dot {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: var(--border-light);
   border: none;
@@ -124,4 +124,16 @@
 .dotActive {
   background-color: var(--accent);
   transform: scale(1.35);
+}
+
+@media (max-width: 768px) {
+  .section { padding: 3.5rem 1.25rem; }
+  .quote { font-size: 1.05rem; font-weight: 400; min-height: auto; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 3rem 1rem; }
+  .quote { font-size: 1rem; font-weight: 400; font-style: normal; }
+  .name { font-size: 0.97rem; }
+  .event { font-size: 0.78rem; }
 }

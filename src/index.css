@@ -36,8 +36,16 @@ html {
   scroll-behavior: auto;
 }
 
+@media (max-width: 768px) {
+  html { font-size: 16px; }
+  /* Boost muted text visibility on budget screens */
+  :root { --muted: oklch(0.80 0.014 240); }
+}
+
 @media (max-width: 480px) {
-  html { font-size: 15px; }
+  html { font-size: 16px; }
+  /* font-weight: 300 is invisible on mid-range phone screens — bump to 400 */
+  body { font-weight: 400; }
 }
 
 body {

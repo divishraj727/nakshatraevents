@@ -171,21 +171,30 @@
 
 @media (max-width: 768px) {
   .topRow { grid-template-columns: 1fr; gap: 2rem; }
-  .bottomRow { flex-direction: column; align-items: flex-start; }
+  .bottomRow { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .footer { padding: 2.5rem 1.25rem 0; }
+  .wordmark { font-size: 1.05rem; }
+  .tagline { font-size: 0.9rem; font-weight: 400; }
+  .sub { font-size: 0.84rem; font-weight: 400; }
+  .navHeading { font-size: 0.78rem; font-weight: 600; }
+  .navLink { font-size: 0.97rem; font-weight: 400; }
+  .contactLine { font-size: 0.97rem; font-weight: 400; }
+  .addr { font-size: 0.94rem; font-weight: 400; line-height: 1.75; }
+  .mapsHint { font-size: 0.82rem; font-weight: 500; }
+  .coverageLabel { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; }
+  .cityList { font-size: 0.9rem; font-weight: 400; line-height: 1.85; }
+  .copy { font-size: 0.84rem; font-weight: 400; }
+  .founderLine { font-size: 0.84rem; font-weight: 400; }
+  .navList { gap: 0.75rem; }
+  .contactLines { gap: 0.65rem; }
+  .devLink { font-weight: 500; }
 }
 
-@media (max-width: 600px) {
-  .footer { padding: 2.5rem 1.25rem 0; }
-  .wordmark { font-size: 1rem; }
-  .tagline { font-size: 0.82rem; }
-  .sub { font-size: 0.76rem; }
-  .navHeading { font-size: 0.72rem; }
-  .navLink { font-size: 0.88rem; }
-  .contactLine { font-size: 0.88rem; }
-  .addr { font-size: 0.88rem; }
-  .coverageLabel { font-size: 0.72rem; }
-  .cityList { font-size: 0.82rem; line-height: 1.8; }
-  .copy, .founderLine { font-size: 0.78rem; }
-  .navList { gap: 0.7rem; }
-  .contactLines { gap: 0.55rem; }
+@media (max-width: 480px) {
+  .footer { padding: 2.25rem 1rem 0; }
+  .topRow { gap: 1.75rem; }
+  .wordmark { font-size: 1rem; letter-spacing: 0.1em; }
+  .navHeading { margin-bottom: 0.75rem; }
+  .coverageRow { padding: 1.25rem 0; }
+  .bottomRow { padding: 1.1rem 0; }
 }

@@ -179,19 +179,25 @@
 
 @media (max-width: 900px) { .grid { columns: 2; } }
 
-@media (max-width: 600px) {
-  .filters { gap: 0.4rem; }
-  .filterBtn {
-    padding: 0.5rem 0.9rem;
-    font-size: 0.75rem;
-    min-height: 2.25rem;
-  }
-  .subhead { font-size: 0.9rem; }
+@media (max-width: 768px) {
+  .section { padding: 3.5rem 1.25rem; }
+  .heading { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+  .subhead { font-size: 1rem; font-weight: 400; }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 480px) {
+  .section { padding: 3rem 1rem; }
+  .heading { font-size: 1.7rem; }
+  .subhead { font-size: 0.97rem; font-weight: 400; }
+  .filters { gap: 0.4rem; margin-bottom: 1.25rem; }
+  .filterBtn {
+    padding: 0.55rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    min-height: 2.4rem;
+  }
   .grid { columns: 1; }
-  .ctaBtn { width: 100%; text-align: center; }
+  .ctaBtn { width: 100%; text-align: center; font-size: 0.88rem; font-weight: 500; padding: 0.95rem; }
   .item:nth-child(3n+1),
   .item:nth-child(3n+2),
   .item:nth-child(3n) { aspect-ratio: 4/3; }
