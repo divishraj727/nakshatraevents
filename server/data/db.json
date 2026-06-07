@@ -1,0 +1,32 @@
+{
+  "events": [
+    {
+      "id": "evt-001",
+      "title": "Grand Wedding — Shimoga Palace Grounds",
+      "category": "Wedding",
+      "date": "2024-11-15",
+      "location": "Shimoga",
+      "description": "A 300-guest traditional Kannada wedding with floral mandap, themed varmala, and full reception production.",
+      "createdAt": "2024-11-20T10:00:00Z"
+    },
+    {
+      "id": "evt-002",
+      "title": "Corporate Product Launch — Bangalore",
+      "category": "Corporate Event",
+      "date": "2024-10-08",
+      "location": "Bangalore",
+      "description": "Product launch event for a leading tech brand with stage production, lighting design, and photography.",
+      "createdAt": "2024-10-10T10:00:00Z"
+    },
+    {
+      "id": "evt-003",
+      "title": "Mehandi & Sangeet Night — Mysore",
+      "category": "Mehandi",
+      "date": "2024-09-22",
+      "location": "Mysore",
+      "description": "Two-day pre-wedding celebration with artist mehandi, DJ setup, and custom stage decoration.",
+      "createdAt": "2024-09-25T10:00:00Z"
+    }
+  ],
+  "gallery": []
+}

@@ -1,0 +1,181 @@
+.section {
+  padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5vw, 4rem);
+  background-color: var(--bg);
+  position: relative;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);
+}
+
+.inner { max-width: 1200px; margin: 0 auto; }
+
+.header { margin-bottom: clamp(2rem, 4vw, 3rem); }
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  margin-bottom: 0.9rem;
+  text-wrap: balance;
+}
+
+.subhead {
+  font-size: clamp(0.88rem, 1.2vw, 0.98rem);
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 54ch;
+  line-height: 1.75;
+}
+
+/* ── Filters ── */
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.filterBtn {
+  padding: 0.45rem 1.1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 2px;
+  background: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.filterBtn:hover { border-color: var(--border-light); color: var(--ink); }
+
+.filterActive {
+  border-color: var(--accent);
+  color: var(--accent);
+  background-color: oklch(0.76 0.12 80 / 0.07);
+}
+
+/* ── Masonry grid ── */
+.grid { columns: 3; column-gap: 0.8rem; }
+
+.item {
+  break-inside: avoid;
+  margin-bottom: 0.8rem;
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: auto;
+  transition: box-shadow 0.3s ease;
+}
+
+.item:hover { box-shadow: 0 8px 40px oklch(0 0 0 / 0.4); }
+
+/* Alternating aspect ratios via nth-child */
+.item:nth-child(3n+1) { aspect-ratio: 4/3; }
+.item:nth-child(3n+2) { aspect-ratio: 3/4; }
+.item:nth-child(3n)   { aspect-ratio: 1/1; }
+
+.media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Placeholder gradients */
+.gradA { background: linear-gradient(145deg, oklch(0.14 0.04 255), oklch(0.09 0.02 245)); }
+.gradB { background: linear-gradient(145deg, oklch(0.13 0.06 270), oklch(0.08 0.02 250)); }
+.gradC { background: linear-gradient(145deg, oklch(0.14 0.05 230), oklch(0.10 0.02 240)); }
+.gradD { background: linear-gradient(145deg, oklch(0.13 0.04 260), oklch(0.08 0.015 235)); }
+.gradE { background: linear-gradient(145deg, oklch(0.16 0.07 80 / 0.5), oklch(0.10 0.02 240)); }
+.gradF { background: linear-gradient(145deg, oklch(0.12 0.05 250), oklch(0.09 0.03 265)); }
+
+/* Hover overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, oklch(0.06 0.015 240 / 0.88) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.item:hover .overlay { opacity: 1; }
+.item:hover .caption { opacity: 1; transform: translateY(0); }
+
+/* Caption */
+.caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 0.85rem 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s var(--ease-expo);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.captionTag {
+  font-size: 0.65rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+
+/* Video play icon */
+.videoIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: oklch(1 0 0 / 0.7);
+  text-shadow: 0 2px 12px oklch(0 0 0 / 0.5);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ── CTA ── */
+.cta {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.ctaBtn {
+  padding: 0.85rem 2.5rem;
+  border: 1px solid var(--border-light);
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  background: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.ctaBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background-color: oklch(0.78 0.13 80 / 0.06);
+}
+
+@media (max-width: 900px) { .grid { columns: 2; } }
+@media (max-width: 520px) { .grid { columns: 1; } }

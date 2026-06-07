@@ -1,0 +1,148 @@
+.footer {
+  background-color: oklch(0.06 0.010 240);
+  border-top: 1px solid var(--border);
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem) 0;
+}
+
+.inner { max-width: 1200px; margin: 0 auto; }
+
+.topRow {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.2fr;
+  gap: clamp(2rem, 4vw, 5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Brand ── */
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+
+.tagline {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+}
+
+.sub {
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: oklch(0.42 0.01 240);
+  letter-spacing: 0.04em;
+}
+
+/* ── Nav ── */
+.navHeading {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: oklch(0.5 0.015 240);
+  margin-bottom: 1rem;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.navLink {
+  font-size: 0.84rem;
+  font-weight: 300;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover { color: var(--ink); }
+
+/* ── Contact ── */
+.contactLines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.contactLine {
+  font-size: 0.84rem;
+  font-weight: 300;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.contactLine:hover { color: var(--ink); }
+
+.addr {
+  font-size: 0.84rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.65;
+  font-style: normal;
+  margin-top: 0.15rem;
+}
+
+/* ── Coverage ── */
+.coverageRow {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.coverageLabel {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: oklch(0.48 0.015 240);
+}
+
+.cityList {
+  font-size: 0.77rem;
+  font-weight: 300;
+  color: oklch(0.45 0.01 240);
+  line-height: 1.65;
+  letter-spacing: 0.03em;
+}
+
+/* ── Bottom ── */
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 0;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.copy {
+  font-size: 0.74rem;
+  font-weight: 300;
+  color: oklch(0.4 0.01 240);
+}
+
+.founderLine {
+  font-size: 0.74rem;
+  font-weight: 300;
+  color: oklch(0.4 0.01 240);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+  .topRow { grid-template-columns: 1fr; gap: 2rem; }
+  .bottomRow { flex-direction: column; align-items: flex-start; }
+}
