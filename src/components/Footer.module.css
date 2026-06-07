@@ -142,6 +142,14 @@
   letter-spacing: 0.04em;
 }
 
+.devLink {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.devLink:hover { color: var(--ink); }
+
 @media (max-width: 768px) {
   .topRow { grid-template-columns: 1fr; gap: 2rem; }
   .bottomRow { flex-direction: column; align-items: flex-start; }

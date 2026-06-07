@@ -60,9 +60,14 @@ export default function Footer() {
 
         <div className={s.bottomRow}>
           <p className={s.copy}>
-            &copy; {new Date().getFullYear()} Nakshatra Events / Mahadeva Management. All rights reserved.
+            &copy; {new Date().getFullYear()} Nakshatra Events. All rights reserved.
           </p>
-          <p className={s.founderLine}>Founded by Rashmi Satish</p>
+          <p className={s.founderLine}>
+            Founded by Rashmi Satish &nbsp;·&nbsp; Developed by{' '}
+            <a href="https://www.linkedin.com/in/divish-raj-o-664a1519a/" target="_blank" rel="noopener noreferrer" className={s.devLink}>DivishRaj O</a>
+            {' '}&amp;{' '}
+            <a href="https://www.linkedin.com/in/yashwanth-l-s-4101b636b/" target="_blank" rel="noopener noreferrer" className={s.devLink}>Yashwanth LS</a>
+          </p>
         </div>
       </div>
     </footer>
