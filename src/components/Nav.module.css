@@ -143,6 +143,30 @@
   gap: 2.25rem;
 }
 
+.closeBtn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: oklch(0.18 0.02 240);
+  border: 1px solid var(--border-light);
+  color: var(--ink);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  z-index: 1;
+}
+
+.closeBtn:hover {
+  background: oklch(0.24 0.025 240);
+  color: var(--accent);
+}
+
 .mobileLink {
   font-family: var(--font-display);
   font-size: clamp(1.6rem, 5vw, 2.2rem);
