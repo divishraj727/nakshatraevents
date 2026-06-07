@@ -103,3 +103,12 @@
 
 .btn:hover { background-color: var(--accent-dim); }
 .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+@media (max-width: 480px) {
+  .page { padding: 1.25rem; align-items: flex-start; padding-top: 3rem; }
+  .card { padding: 2rem 1.5rem; border-radius: 4px; }
+  .heading { font-size: 1.3rem; }
+  .label { font-size: 0.72rem; }
+  .input { font-size: 0.92rem; padding: 0.8rem 0.85rem; }
+  .btn { padding: 0.9rem; font-size: 0.8rem; }
+}

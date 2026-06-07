@@ -171,11 +171,14 @@
 }
 
 @media (max-width: 768px) {
-  .links {
-    display: none;
-  }
+  .links { display: none; }
+  .hamburger { display: flex; }
+  .nav { padding: 1.1rem 1.25rem; }
+  .logo { font-size: 0.9rem; }
+}
 
-  .hamburger {
-    display: flex;
-  }
+@media (max-width: 480px) {
+  .mobileLink { font-size: clamp(1.4rem, 7vw, 1.8rem); }
+  .mobileLinks { gap: 1.75rem; }
+  .mobileCta { padding: 0.75rem 2rem; font-size: 0.76rem; }
 }

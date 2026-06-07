@@ -225,7 +225,20 @@
   .submitBtn { width: 100%; text-align: center; align-self: stretch; }
 }
 
+@media (max-width: 600px) {
+  .preheading { font-size: 0.72rem; }
+  .heading { font-size: clamp(1.5rem, 6vw, 2rem); }
+  .body { font-size: 0.92rem; }
+  .contactLine { font-size: 0.9rem; }
+  .address { font-size: 0.9rem; }
+  .founder { font-size: 0.88rem; }
+  .company { font-size: 0.82rem; }
+  .coverage { font-size: 0.8rem; }
+  .label { font-size: 0.72rem; }
+  .input, .select, .textarea { font-size: 0.92rem; padding: 0.75rem 0.85rem; }
+}
+
 @media (max-width: 480px) {
   .formWrap { padding: 1.5rem 1.25rem; }
-  .heading { font-size: clamp(1.5rem, 6vw, 2rem); }
+  .section { padding: 3.5rem 1.25rem; }
 }

@@ -89,7 +89,6 @@
   font-weight: 400;
   letter-spacing: 0.05em;
   color: var(--ink);
-  white-space: nowrap;
   flex-shrink: 0;
 }
 
@@ -112,17 +111,28 @@
   flex-shrink: 0;
 }
 
+@media (max-width: 768px) {
+  .subhead { font-size: 0.97rem; }
+}
+
 @media (max-width: 640px) {
   .row {
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto;
-    gap: 0.5rem 1rem;
+    gap: 0.4rem 0.75rem;
+    padding: 1.25rem 0;
+  }
+
+  .rowName {
+    font-size: 1.05rem;
+    letter-spacing: 0.03em;
   }
 
   .rowDesc {
     grid-column: 1;
     text-align: left;
     grid-row: 2;
+    font-size: 0.88rem;
   }
 
   .rowArrow {
@@ -131,4 +141,8 @@
     align-self: start;
     margin-top: 0.15rem;
   }
+}
+
+@media (max-width: 400px) {
+  .rowName { font-size: 0.97rem; }
 }

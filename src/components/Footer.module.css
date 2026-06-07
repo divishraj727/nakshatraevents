@@ -146,3 +146,19 @@
   .topRow { grid-template-columns: 1fr; gap: 2rem; }
   .bottomRow { flex-direction: column; align-items: flex-start; }
 }
+
+@media (max-width: 600px) {
+  .footer { padding: 2.5rem 1.25rem 0; }
+  .wordmark { font-size: 1rem; }
+  .tagline { font-size: 0.82rem; }
+  .sub { font-size: 0.76rem; }
+  .navHeading { font-size: 0.72rem; }
+  .navLink { font-size: 0.88rem; }
+  .contactLine { font-size: 0.88rem; }
+  .addr { font-size: 0.88rem; }
+  .coverageLabel { font-size: 0.72rem; }
+  .cityList { font-size: 0.82rem; line-height: 1.8; }
+  .copy, .founderLine { font-size: 0.78rem; }
+  .navList { gap: 0.7rem; }
+  .contactLines { gap: 0.55rem; }
+}

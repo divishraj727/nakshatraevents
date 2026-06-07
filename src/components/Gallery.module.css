@@ -178,4 +178,21 @@
 }
 
 @media (max-width: 900px) { .grid { columns: 2; } }
-@media (max-width: 520px) { .grid { columns: 1; } }
+
+@media (max-width: 600px) {
+  .filters { gap: 0.4rem; }
+  .filterBtn {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.75rem;
+    min-height: 2.25rem;
+  }
+  .subhead { font-size: 0.9rem; }
+}
+
+@media (max-width: 520px) {
+  .grid { columns: 1; }
+  .ctaBtn { width: 100%; text-align: center; }
+  .item:nth-child(3n+1),
+  .item:nth-child(3n+2),
+  .item:nth-child(3n) { aspect-ratio: 4/3; }
+}
