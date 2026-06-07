@@ -23,7 +23,12 @@ export default function Footer() {
           <div className={s.brand}>
             <p className={s.wordmark}>Nakshatra Events</p>
             <p className={s.tagline}>Transforming Moments, Creating Memories</p>
-            <p className={s.sub}>Developed by DivishRaj O &amp; Yashwanth LS</p>
+            <p className={s.sub}>
+              Developed by{' '}
+              <a href="https://www.linkedin.com/in/divish-raj-o-664a1519a/" target="_blank" rel="noopener noreferrer" className={s.devLink}>DivishRaj O</a>
+              {' '}&amp;{' '}
+              <a href="https://www.linkedin.com/in/yashwanth-l-s-4101b636b/" target="_blank" rel="noopener noreferrer" className={s.devLink}>Yashwanth LS</a>
+            </p>
           </div>
 
           <nav className={s.nav} aria-label="Footer navigation">

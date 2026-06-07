@@ -17,34 +17,35 @@
 /* ── Brand ── */
 .wordmark {
   font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 400;
+  font-size: 1.25rem;
+  font-weight: 500;
   letter-spacing: 0.12em;
   color: var(--ink);
   margin-bottom: 0.6rem;
 }
 
 .tagline {
-  font-size: 0.8rem;
-  font-weight: 300;
+  font-size: 0.95rem;
+  font-weight: 400;
   color: var(--muted);
-  letter-spacing: 0.04em;
-  margin-bottom: 0.4rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
 }
 
 .sub {
-  font-size: 0.72rem;
-  font-weight: 300;
-  color: oklch(0.42 0.01 240);
-  letter-spacing: 0.04em;
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.03em;
 }
 
 /* ── Nav ── */
 .navHeading {
-  font-size: 0.68rem;
+  font-size: 0.82rem;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: oklch(0.5 0.015 240);
+  color: var(--muted);
   margin-bottom: 1rem;
 }
 
@@ -58,11 +59,11 @@
 }
 
 .navLink {
-  font-size: 0.84rem;
-  font-weight: 300;
+  font-size: 1rem;
+  font-weight: 500;
   color: var(--muted);
   text-decoration: none;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   transition: color 0.2s ease;
 }
 
@@ -76,11 +77,11 @@
 }
 
 .contactLine {
-  font-size: 0.84rem;
-  font-weight: 300;
+  font-size: 1rem;
+  font-weight: 500;
   color: var(--muted);
   text-decoration: none;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   transition: color 0.2s ease;
 }
 
@@ -95,10 +96,10 @@
 }
 
 .addr {
-  font-size: 0.84rem;
-  font-weight: 300;
+  font-size: 0.97rem;
+  font-weight: 400;
   color: var(--muted);
-  line-height: 1.65;
+  line-height: 1.8;
   font-style: normal;
   transition: color 0.2s ease;
 }
@@ -124,18 +125,19 @@
 }
 
 .coverageLabel {
-  font-size: 0.68rem;
+  font-size: 0.82rem;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: oklch(0.48 0.015 240);
+  color: var(--muted);
 }
 
 .cityList {
-  font-size: 0.77rem;
-  font-weight: 300;
-  color: oklch(0.45 0.01 240);
-  line-height: 1.65;
-  letter-spacing: 0.03em;
+  font-size: 0.94rem;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.85;
+  letter-spacing: 0.02em;
 }
 
 /* ── Bottom ── */
@@ -149,16 +151,16 @@
 }
 
 .copy {
-  font-size: 0.74rem;
-  font-weight: 300;
-  color: oklch(0.4 0.01 240);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--muted);
 }
 
 .founderLine {
-  font-size: 0.74rem;
-  font-weight: 300;
-  color: oklch(0.4 0.01 240);
-  letter-spacing: 0.04em;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.02em;
 }
 
 .devLink {
