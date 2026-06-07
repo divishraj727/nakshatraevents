@@ -86,14 +86,33 @@
 
 .contactLine:hover { color: var(--ink); }
 
+.addrLink {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.15rem;
+}
+
 .addr {
   font-size: 0.84rem;
   font-weight: 300;
   color: var(--muted);
   line-height: 1.65;
   font-style: normal;
-  margin-top: 0.15rem;
+  transition: color 0.2s ease;
 }
+
+.addrLink:hover .addr { color: var(--ink); }
+
+.mapsHint {
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  transition: color 0.2s ease;
+}
+
+.addrLink:hover .mapsHint { color: var(--accent-dim); }
 
 /* ── Coverage ── */
 .coverageRow {

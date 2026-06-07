@@ -124,10 +124,20 @@ export default function Contact() {
               </div>
               <div className={s.contactRow}>
                 <span className={s.contactIcon} aria-hidden="true">◎</span>
-                <address className={s.address}>
-                  Gopala Bus Stop, Gopala<br />
-                  Shimoga, Karnataka
-                </address>
+                <a
+                  href="https://maps.app.goo.gl/14VW4uxguHCSFsRK6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={s.addressLink}
+                >
+                  <address className={s.address}>
+                    Banasiri, 1st Floor, 271-A<br />
+                    Gopal Gowda Extension<br />
+                    Opp. Commercial Tax Office<br />
+                    Shivamogga, Karnataka 577205
+                  </address>
+                  <span className={s.mapsHint}>View on Maps ↗</span>
+                </a>
               </div>
             </div>
 

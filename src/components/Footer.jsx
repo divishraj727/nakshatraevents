@@ -43,10 +43,20 @@ export default function Footer() {
               <a href="tel:+919740904242" className={s.contactLine}>+91 9740904242</a>
               <a href="tel:+918951403242" className={s.contactLine}>+91 8951403242</a>
               <a href="mailto:rashmirs1989@gmail.com" className={s.contactLine}>rashmirs1989@gmail.com</a>
-              <address className={s.addr}>
-                Gopala Bus Stop, Gopala<br />
-                Shimoga, Karnataka
-              </address>
+              <a
+                href="https://maps.app.goo.gl/14VW4uxguHCSFsRK6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={s.addrLink}
+              >
+                <address className={s.addr}>
+                  Banasiri, 1st Floor, 271-A<br />
+                  Gopal Gowda Extension<br />
+                  Opp. Commercial Tax Office<br />
+                  Shivamogga, Karnataka 577205
+                </address>
+                <span className={s.mapsHint}>View on Maps ↗</span>
+              </a>
             </div>
           </div>
         </div>
