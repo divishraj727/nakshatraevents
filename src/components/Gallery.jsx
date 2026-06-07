@@ -3,18 +3,35 @@ import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import s from './Gallery.module.css'
 
+const BASE = 'https://nakshatraweddingandevents.in/wp-content/uploads'
+
 const CATEGORIES = ['All', 'Wedding', 'Mehandi', 'Corporate Event', 'Celebration', 'Photography']
 
 const placeholders = [
-  { id: 'p1', type: 'image', label: 'Wedding Ceremony', category: 'Wedding', gradient: 'A' },
-  { id: 'p2', type: 'image', label: 'Mehandi Decor', category: 'Mehandi', gradient: 'B' },
-  { id: 'p3', type: 'image', label: 'Stage Production', category: 'Wedding', gradient: 'C' },
-  { id: 'p4', type: 'image', label: 'Corporate Gala', category: 'Corporate Event', gradient: 'D' },
-  { id: 'p5', type: 'image', label: 'Themed Varmala', category: 'Wedding', gradient: 'E' },
-  { id: 'p6', type: 'image', label: 'Sangeet Night', category: 'Wedding', gradient: 'F' },
-  { id: 'p7', type: 'image', label: 'Birthday Setup', category: 'Celebration', gradient: 'A' },
-  { id: 'p8', type: 'image', label: 'Product Launch', category: 'Corporate Event', gradient: 'B' },
-  { id: 'p9', type: 'image', label: 'Candid Moments', category: 'Photography', gradient: 'C' },
+  { id: 'p1',  type: 'image', url: `${BASE}/2023/07/Patrick-Felicia.jpg`,                                    label: 'Wedding Ceremony',       category: 'Wedding' },
+  { id: 'p2',  type: 'image', url: `${BASE}/2023/07/iiiiiiiiii-891x1024-1.jpg`,                             label: 'Bridal Portrait',        category: 'Wedding' },
+  { id: 'p3',  type: 'image', url: `${BASE}/2023/06/1-2.jpg`,                                               label: 'Wedding Decor',          category: 'Wedding' },
+  { id: 'p4',  type: 'image', url: `${BASE}/2023/06/2-2.jpg`,                                               label: 'Stage Setup',            category: 'Wedding' },
+  { id: 'p5',  type: 'image', url: `${BASE}/2023/06/3-2.jpg`,                                               label: 'Celebration Moments',    category: 'Wedding' },
+  { id: 'p6',  type: 'image', url: `${BASE}/2023/06/4-1.jpg`,                                               label: 'Floral Arrangements',    category: 'Wedding' },
+  { id: 'p7',  type: 'image', url: `${BASE}/2023/07/mehandi-function-photography-services.jpeg`,            label: 'Mehandi Ceremony',       category: 'Mehandi' },
+  { id: 'p8',  type: 'image', url: `${BASE}/2023/07/3.jpeg`,                                                label: 'Mehandi Decor',          category: 'Mehandi' },
+  { id: 'p9',  type: 'image', url: `${BASE}/2023/07/1.jpeg`,                                                label: 'Mehandi Setup',          category: 'Mehandi' },
+  { id: 'p10', type: 'image', url: `${BASE}/2023/07/4.jpeg`,                                                label: 'Mehandi Details',        category: 'Mehandi' },
+  { id: 'p11', type: 'image', url: `${BASE}/2023/07/band-or-dj-for-wedding-reception.webp`,                 label: 'DJ & Sangeet Night',     category: 'Celebration' },
+  { id: 'p12', type: 'image', url: `${BASE}/2023/07/60a10ef1f1d351621167857.jpeg`,                          label: 'Birthday Celebration',   category: 'Celebration' },
+  { id: 'p13', type: 'image', url: `${BASE}/2023/06/devendran-events-ameerpet-hyderabad-event-organisers-for-birthday-party-s99wy617eu.webp`, label: 'Birthday Setup', category: 'Celebration' },
+  { id: 'p14', type: 'image', url: `${BASE}/2023/07/BC-Social-Work-May27-1_770.jpeg`,                       label: 'Baby Shower',            category: 'Celebration' },
+  { id: 'p15', type: 'image', url: `${BASE}/2023/07/Screenshot_28.png`,                                     label: 'Product Launch',         category: 'Corporate Event' },
+  { id: 'p16', type: 'image', url: `${BASE}/2023/07/Screenshot_27.png`,                                     label: 'Corporate Event',        category: 'Corporate Event' },
+  { id: 'p17', type: 'image', url: `${BASE}/2023/07/Screenshot_109.png`,                                    label: 'Corporate Gala',         category: 'Corporate Event' },
+  { id: 'p18', type: 'image', url: `${BASE}/2023/07/Why-Videography-May-Bring-an-End-to-Event-Photography.webp`, label: 'Event Photography', category: 'Photography' },
+  { id: 'p19', type: 'image', url: `${BASE}/2023/07/WhatsApp-Image-2023-06-09-at-11.38.33-AM-1-1.jpeg`,    label: 'Candid Moments',         category: 'Photography' },
+  { id: 'p20', type: 'image', url: `${BASE}/2023/07/WhatsApp-Image-2023-06-09-at-11.38.33-AM-1.jpeg`,      label: 'Event Highlights',       category: 'Photography' },
+  { id: 'p21', type: 'image', url: `${BASE}/2023/07/971104_538433389551280_1749892374_n.jpg`,               label: 'Special Moments',        category: 'Photography' },
+  { id: 'p22', type: 'image', url: `${BASE}/2023/07/WhatsApp-Image-2023-06-09-at-11.33.34-AM-1-1.jpeg`,    label: 'Behind the Scenes',      category: 'Photography' },
+  { id: 'p23', type: 'image', url: `${BASE}/2023/06/WhatsApp-Image-2023-06-09-at-11.33.32-AM-1-1.jpeg`,    label: 'Team at Work',           category: 'Photography' },
+  { id: 'p24', type: 'image', url: `${BASE}/2023/06/WhatsApp-Image-2023-06-09-at-11.33.32-AM-1.jpeg`,      label: 'Event Setup',            category: 'Photography' },
 ]
 
 function GalleryItem({ item, index, filter, onNavigate }) {
@@ -95,8 +112,7 @@ export default function Gallery() {
         >
           <h2 className={s.heading}>The Work</h2>
           <p className={s.subhead}>
-            Click any category to view the full collection. Upload event photographs
-            via the admin panel to replace these placeholders.
+            A glimpse of events crafted across Karnataka. Click any category to view the full collection.
           </p>
         </motion.div>
 
