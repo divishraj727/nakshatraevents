@@ -23,7 +23,7 @@ export default function Footer() {
           <div className={s.brand}>
             <p className={s.wordmark}>Nakshatra Events</p>
             <p className={s.tagline}>Transforming Moments, Creating Memories</p>
-            <p className={s.sub}>A Mahadeva Management Company, Est. 2021</p>
+            <p className={s.sub}>Developed by DivishRaj O &amp; Yashwanth LS</p>
           </div>
 
           <nav className={s.nav} aria-label="Footer navigation">
