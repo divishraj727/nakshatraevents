@@ -33,11 +33,14 @@ export default function Hero() {
       className={s.hero}
       aria-label="Nakshatra Events — event planners across Karnataka"
     >
-      {/* Parallax atmospheric background */}
+      {/* Cinematic background with Ken Burns animation */}
       <div className={s.bg} aria-hidden="true">
+        <div className={s.bgImg} />
+        <div className={s.bgOverlay} />
+        <div className={s.lightLeak} />
+        <div className={s.lightLeak2} />
         <motion.div className={s.orb1} style={{ y: orb1Y }} />
         <motion.div className={s.orb2} style={{ y: orb2Y }} />
-        <div className={s.orb3} />
         <div className={s.gridOverlay} />
       </div>
 
