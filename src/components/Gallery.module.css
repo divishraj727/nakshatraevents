@@ -70,14 +70,22 @@
   break-inside: avoid;
   margin-bottom: 0.8rem;
   position: relative;
-  border-radius: 3px;
+  border-radius: 4px;
   overflow: hidden;
   cursor: pointer;
   aspect-ratio: auto;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.35s ease;
+  /* Needed so overflow:hidden clips correctly with 3D transform */
+  will-change: transform;
+  -webkit-mask-image: -webkit-radial-gradient(white, black); /* Safari 3D+overflow fix */
 }
 
-.item:hover { box-shadow: 0 8px 40px oklch(0 0 0 / 0.4); }
+.item:hover {
+  box-shadow:
+    0 16px 40px oklch(0 0 0 / 0.5),
+    0  4px 12px oklch(0 0 0 / 0.3),
+    0  0  0  1px oklch(0.78 0.13 80 / 0.18);
+}
 
 /* Alternating aspect ratios via nth-child */
 .item:nth-child(3n+1) { aspect-ratio: 4/3; }
@@ -106,6 +114,17 @@
   background: linear-gradient(to top, oklch(0.06 0.015 240 / 0.88) 0%, transparent 55%);
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Gold glare that follows cursor — positioned above overlay, below caption */
+.glare {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  border-radius: inherit;
 }
 
 .item:hover .overlay { opacity: 1; }

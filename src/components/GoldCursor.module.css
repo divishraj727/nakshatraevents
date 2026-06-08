@@ -1,0 +1,67 @@
+/* ── Gold Cursor ── */
+
+/* Canvas holds the trail — full screen, non-interactive */
+.canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9997;
+  mix-blend-mode: screen;
+}
+
+/* Main dot — sits exactly on cursor */
+.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #fff8c0 0%,
+    #dba830 45%,
+    #b07820 100%
+  );
+  box-shadow:
+    0 0  6px 1px rgba(220, 175, 60, 0.9),
+    0 0 14px 3px rgba(200, 145, 30, 0.55),
+    0 0 28px 6px rgba(180, 120, 20, 0.25);
+  will-change: transform;
+}
+
+/* Outer ring — lags behind via spring, creates the "drag" feel */
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(210, 168, 58, 0.55);
+  pointer-events: none;
+  z-index: 9998;
+  box-shadow:
+    0 0  8px 1px rgba(210, 168, 58, 0.18),
+    inset 0 0 6px rgba(210, 168, 58, 0.08);
+  will-change: transform;
+  /* very subtle gold tint fill */
+  background: radial-gradient(
+    circle,
+    rgba(210, 168, 58, 0.04) 0%,
+    transparent 70%
+  );
+}
+
+/* ── Hide on touch/mobile (no cursor needed) ── */
+@media (hover: none) {
+  .canvas,
+  .dot,
+  .ring {
+    display: none;
+  }
+}

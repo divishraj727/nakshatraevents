@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import CurtainReveal from './CurtainReveal'
 import s from './Services.module.css'
 
 const services = [
@@ -35,25 +36,20 @@ function ServiceRow({ service, index }) {
 }
 
 export default function Services() {
-  const headerRef = useRef(null)
-  const inView = useInView(headerRef, { once: true, margin: '-80px' })
-
   return (
     <section id="services" className={s.section} aria-label="Event services across Karnataka">
       <div className={s.inner}>
-        <motion.div
-          ref={headerRef}
-          className={s.header}
-          initial={{ opacity: 0, y: 32 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <h2 className={s.heading}>What We Do</h2>
+        <div className={s.header}>
+          <h2 className={s.heading}>
+            <CurtainReveal><span>What We Do</span></CurtainReveal>
+          </h2>
           <p className={s.subhead}>
-            Nine event types. One standard of craft. Serving Shimoga, Bangalore, Mysore,
-            Mangalore, Hubli, Davangere, and every corner of Karnataka.
+            <CurtainReveal delay={0.18}>
+              <span>Nine event types. One standard of craft. Serving Shimoga, Bangalore, Mysore,
+              Mangalore, Hubli, Davangere, and every corner of Karnataka.</span>
+            </CurtainReveal>
           </p>
-        </motion.div>
+        </div>
 
         <div className={s.list} role="list">
           {services.map((svc, i) => (

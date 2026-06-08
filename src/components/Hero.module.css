@@ -19,70 +19,122 @@
   overflow: hidden;
 }
 
-/* ── Cinematic background image with Ken Burns ── */
+/* ── Animated mesh gradient base ── */
+.meshGradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 50%,  oklch(0.22 0.08 265 / 0.7) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 20%,  oklch(0.18 0.06 255 / 0.6) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at 60% 80%,  oklch(0.14 0.04 240 / 0.5) 0%, transparent 60%),
+    oklch(0.06 0.012 240);
+  animation: meshShift 18s ease-in-out infinite alternate;
+}
+
+@keyframes meshShift {
+  0%   {
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 50%,  oklch(0.22 0.08 265 / 0.7) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 80% 20%,  oklch(0.18 0.06 255 / 0.6) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 50% at 60% 80%,  oklch(0.14 0.04 240 / 0.5) 0%, transparent 60%),
+      oklch(0.06 0.012 240);
+  }
+  33%  {
+    background:
+      radial-gradient(ellipse 70% 80% at 70% 30%,  oklch(0.24 0.10 260 / 0.65) 0%, transparent 60%),
+      radial-gradient(ellipse 80% 50% at 10% 70%,  oklch(0.16 0.07 270 / 0.55) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 60% at 85% 85%,  oklch(0.20 0.06 250 / 0.45) 0%, transparent 60%),
+      oklch(0.06 0.012 240);
+  }
+  66%  {
+    background:
+      radial-gradient(ellipse 90% 50% at 50% 10%,  oklch(0.20 0.09 255 / 0.7) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 70% at 90% 60%,  oklch(0.22 0.08 265 / 0.6) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 40% at 20% 90%,  oklch(0.15 0.05 245 / 0.5) 0%, transparent 60%),
+      oklch(0.06 0.012 240);
+  }
+  100% {
+    background:
+      radial-gradient(ellipse 60% 70% at 30% 20%,  oklch(0.26 0.11 258 / 0.65) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 60% at 75% 75%,  oklch(0.18 0.07 250 / 0.55) 0%, transparent 55%),
+      radial-gradient(ellipse 55% 80% at 5%  50%,  oklch(0.14 0.05 270 / 0.5) 0%, transparent 60%),
+      oklch(0.06 0.012 240);
+  }
+}
+
+/* ── Wedding photo with Ken Burns ── */
 .bgImg {
   position: absolute;
   inset: -8%;
   background-image: url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1920&q=80&auto=format&fit=crop');
   background-size: cover;
   background-position: center 30%;
-  animation: kenBurns 14s ease-in-out infinite alternate;
+  animation: kenBurns 20s ease-in-out infinite alternate;
   will-change: transform;
+  opacity: 0.35;
 }
 
 @keyframes kenBurns {
-  0%   { transform: scale(1.0) translate(0%, 0%); }
-  33%  { transform: scale(1.08) translate(-1.5%, -1%); }
-  66%  { transform: scale(1.12) translate(1%, -2%); }
-  100% { transform: scale(1.06) translate(-0.5%, 1%); }
+  0%   { transform: scale(1.0)  translate(0%,    0%); }
+  40%  { transform: scale(1.10) translate(-1.8%, -1.2%); }
+  70%  { transform: scale(1.15) translate(1.2%,  -2.5%); }
+  100% { transform: scale(1.08) translate(-0.5%, 1.5%); }
 }
 
-/* Dark cinematic overlay — keeps text readable */
+/* ── Deep cinematic overlay ── */
 .bgOverlay {
   position: absolute;
   inset: 0;
   background:
     linear-gradient(to bottom,
-      oklch(0.05 0.012 240 / 0.55) 0%,
-      oklch(0.05 0.012 240 / 0.45) 40%,
-      oklch(0.05 0.012 240 / 0.72) 100%),
-    linear-gradient(135deg,
-      oklch(0.08 0.04 260 / 0.6) 0%,
-      transparent 60%);
+      oklch(0.04 0.010 240 / 0.5)  0%,
+      oklch(0.05 0.012 240 / 0.35) 35%,
+      oklch(0.04 0.010 240 / 0.65) 100%),
+    linear-gradient(125deg,
+      oklch(0.35 0.12 80  / 0.07) 0%,
+      transparent 50%),
+    linear-gradient(300deg,
+      oklch(0.25 0.10 255 / 0.06) 0%,
+      transparent 50%);
 }
 
-/* Light leak — golden shimmer from top-right */
-.lightLeak {
+/* ── Horizontal light streaks ── */
+.streak1 {
   position: absolute;
-  top: -20%;
-  right: -5%;
-  width: 55%;
-  height: 70%;
-  background: radial-gradient(ellipse at top right,
-    oklch(0.78 0.13 80 / 0.12) 0%,
-    oklch(0.68 0.14 70 / 0.06) 35%,
-    transparent 65%);
-  animation: leakPulse 10s ease-in-out infinite;
-  mix-blend-mode: screen;
-}
-
-/* Light leak 2 — cool blue from left */
-.lightLeak2 {
-  position: absolute;
-  bottom: 10%;
+  top: 28%;
   left: -10%;
-  width: 45%;
-  height: 60%;
-  background: radial-gradient(ellipse at bottom left,
-    oklch(0.45 0.16 255 / 0.10) 0%,
-    transparent 60%);
-  animation: leakPulse 12s ease-in-out infinite reverse;
-  mix-blend-mode: screen;
+  width: 120%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    oklch(0.78 0.13 80 / 0.15) 30%,
+    oklch(0.78 0.13 80 / 0.25) 50%,
+    oklch(0.78 0.13 80 / 0.15) 70%,
+    transparent 100%);
+  animation: streakMove 8s ease-in-out infinite alternate;
+  filter: blur(1px);
 }
 
-@keyframes leakPulse {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50%       { opacity: 1;   transform: scale(1.08); }
+.streak2 {
+  position: absolute;
+  top: 62%;
+  left: -10%;
+  width: 120%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    oklch(0.55 0.14 255 / 0.10) 35%,
+    oklch(0.55 0.14 255 / 0.18) 55%,
+    oklch(0.55 0.14 255 / 0.10) 75%,
+    transparent 100%);
+  animation: streakMove 11s ease-in-out infinite alternate-reverse;
+  filter: blur(1px);
+}
+
+@keyframes streakMove {
+  0%   { transform: translateX(-8%) scaleY(1);   opacity: 0.4; }
+  50%  { transform: translateX(0%)  scaleY(2);   opacity: 1;   }
+  100% { transform: translateX(5%)  scaleY(1);   opacity: 0.5; }
 }
 
 .orb1 {

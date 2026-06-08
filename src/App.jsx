@@ -13,6 +13,7 @@ import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import FloatingContact from './components/FloatingContact'
+import GoldCursor from './components/GoldCursor'
 import AdminLogin from './pages/AdminLogin'
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard'))
 const GalleryDetail = lazy(() => import('./pages/GalleryDetail'))
@@ -92,6 +93,7 @@ const PageLoader = () => <div style={{ background: 'var(--bg)', minHeight: '100v
 export default function App() {
   return (
     <Suspense fallback={<PageLoader />}>
+      <GoldCursor />
       <Routes>
         <Route path="/" element={<PublicLayout />} />
         <Route path="/gallery/:category" element={<GalleryDetail />} />

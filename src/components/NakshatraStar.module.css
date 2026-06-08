@@ -1,0 +1,127 @@
+/* ── Nakshatra Floating Star ── */
+.wrapper {
+  position: fixed;
+  right: 1.75rem;
+  bottom: 44vh;
+  z-index: 40;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+}
+
+.wrapper:focus-visible {
+  outline: 2px solid oklch(0.78 0.13 80 / 0.8);
+  outline-offset: 6px;
+  border-radius: 50%;
+}
+
+/* The rotating star container */
+.starWrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The SVG */
+.svg {
+  width: 64px;
+  height: 64px;
+  display: block;
+  filter:
+    drop-shadow(0 0 8px oklch(0.78 0.13 80 / 0.55))
+    drop-shadow(0 0 20px oklch(0.78 0.13 80 / 0.3))
+    drop-shadow(0 3px 12px rgba(0, 0, 0, 0.55));
+  transition: filter 0.3s ease;
+}
+
+.wrapper:hover .svg {
+  filter:
+    drop-shadow(0 0 12px oklch(0.78 0.13 80 / 0.75))
+    drop-shadow(0 0 30px oklch(0.78 0.13 80 / 0.45))
+    drop-shadow(0 4px 16px rgba(0, 0, 0, 0.6));
+}
+
+/* Ambient background glow */
+.glow {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    oklch(0.78 0.13 80 / 0.28)  0%,
+    oklch(0.70 0.12 75 / 0.14)  40%,
+    transparent                  68%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Click burst ring */
+.burst {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid oklch(0.88 0.14 82 / 0.7);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Expanding pulse rings */
+.ring {
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  border: 1px solid oklch(0.78 0.13 80 / 0.45);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Tablet ── */
+@media (max-width: 900px) {
+  .wrapper {
+    right: 1.25rem;
+    bottom: 40vh;
+    width: 68px;
+    height: 68px;
+  }
+  .svg {
+    width: 54px;
+    height: 54px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 520px) {
+  .wrapper {
+    right: 0.85rem;
+    bottom: 36vh;
+    width: 58px;
+    height: 58px;
+  }
+  .svg {
+    width: 46px;
+    height: 46px;
+  }
+  .glow {
+    inset: -14px;
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .svg {
+    filter: drop-shadow(0 0 8px oklch(0.78 0.13 80 / 0.5));
+    transition: none;
+  }
+  .ring {
+    display: none;
+  }
+}

@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import FloatingParticles from './FloatingParticles'
+import StarField from './StarField'
 import s from './Hero.module.css'
 
 const container = {
@@ -33,19 +33,26 @@ export default function Hero() {
       className={s.hero}
       aria-label="Nakshatra Events — event planners across Karnataka"
     >
-      {/* Cinematic background with Ken Burns animation */}
+      {/* Layered cinematic background */}
       <div className={s.bg} aria-hidden="true">
+        {/* Base: animated mesh gradient */}
+        <div className={s.meshGradient} />
+        {/* Mid: wedding photo with Ken Burns */}
         <div className={s.bgImg} />
+        {/* Dark cinematic overlay */}
         <div className={s.bgOverlay} />
-        <div className={s.lightLeak} />
-        <div className={s.lightLeak2} />
+        {/* Atmospheric orbs */}
         <motion.div className={s.orb1} style={{ y: orb1Y }} />
         <motion.div className={s.orb2} style={{ y: orb2Y }} />
+        {/* Horizontal light streaks */}
+        <div className={s.streak1} />
+        <div className={s.streak2} />
+        {/* Grid texture */}
         <div className={s.gridOverlay} />
       </div>
 
-      {/* Floating star particles */}
-      <FloatingParticles count={32} />
+      {/* Star field — floating ✦ stars replacing bokeh bubbles */}
+      <StarField count={55} />
 
       {/* Main content */}
       <motion.div

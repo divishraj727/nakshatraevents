@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import CurtainReveal from './CurtainReveal'
 import s from './Contact.module.css'
 
 const eventTypes = [
@@ -98,7 +99,9 @@ export default function Contact() {
         >
           <motion.div variants={item} className={s.info}>
             <p className={s.preheading}>Begin Your Story</p>
-            <h2 className={s.heading}>Let's Plan Something Extraordinary</h2>
+            <h2 className={s.heading}>
+              <CurtainReveal delay={0.1}><span>Let's Plan Something Extraordinary</span></CurtainReveal>
+            </h2>
             <p className={s.body}>
               Whether you're planning a wedding in Shimoga, a product launch in Bangalore,
               or a celebration anywhere across Karnataka — tell us about your occasion
